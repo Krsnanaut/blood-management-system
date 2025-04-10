@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Management System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <h1>Blood Management System</h1>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <% if(success_msg != ''){ %>
+      <div class="alert alert-success"><%= success_msg %></div>
+    <% } %>
+    <% if(error_msg != ''){ %>
+      <div class="alert alert-danger"><%= error_msg %></div>
+    <% } %>
+
+    <div class="hero">
+      <h1>Save Lives With Your Blood Donation</h1>
+      <p>Your blood donation can save up to three lives. Join our community of donors or request blood when needed.</p>
+      <img src="http://www.gapost233.com/wp-content/uploads/2016/01/donate_blood.jpg" alt="Blood Donation" class="hero-image">
+      <div class="btn-group">
+        <a href="/login?role=donor" class="btn">Donate Blood</a>
+        <a href="/login?role=recipient" class="btn btn-secondary">Receive Blood</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Why Donate Blood?</h2>
+      <p>Blood donation is essential for community health. Hospitals rely on donations to save lives during emergencies, surgeries, and for patients with chronic illnesses.</p>
+      <p>Every two seconds, someone in the world needs blood. A single car accident victim can require up to 100 units of blood.</p>
+    </div>
+  </div>
+
+ 
+  
+  <script src="/js/script.js"></script>
+</body>
+</html>

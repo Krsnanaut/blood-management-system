@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Management System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <h1>Blood Management System</h1>
+      <div class="nav-links">
+        <% if(user) { %>
+          <% if(user.role === 'donor') { %>
+            <a href="/donor/dashboard">Dashboard</a>
+            <a href="/donor/donate">Donate</a>
+            <a href="/donor/history">History</a>
+          <% } else { %>
+            <a href="/recipient/dashboard">Dashboard</a>
+            <a href="/recipient/request">Request</a>
+            <a href="/recipient/history">History</a>
+          <% } %>
+          <a href="/logout">Logout</a>
+        <% } else { %>
+          <a href="/">Home</a>
+          <a href="/login">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <% if(success_msg != ''){ %>
+      <div class="alert alert-success"><%= success_msg %></div>
+    <% } %>
+    <% if(error_msg != ''){ %>
+      <div class="alert alert-danger"><%= error_msg %></div>
+    <% } %>
+
+  </div>
+
+ 
+  
+  <script src="/js/script.js"></script>
+</body>
+</html>

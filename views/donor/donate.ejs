@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class="card">
+  <h2>Donate Blood</h2>
+  <p>Please fill out the form below to register your blood donation.</p>
+  
+  <form action="/donor/donate" method="POST">
+    <div class="form-group">
+      <label for="units">Units to Donate (in pints)</label>
+      <input type="number" id="units" name="units" class="form-control" min="0.5" max="2" step="0.5" value="1" required>
+    </div>
+    <div class="form-group">
+      <label for="notes">Additional Notes (optional)</label>
+      <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn">Submit Donation</button>
+  </form>
+</div>
+
+<div class="card">
+  <h3>Important Information</h3>
+  <ul>
+    <li>You must be at least 17 years old to donate blood.</li>
+    <li>You must weigh at least 110 pounds.</li>
+    <li>You must be in good health and feeling well on the day of donation.</li>
+    <li>Please drink plenty of water before donating.</li>
+    <li>Eat a healthy meal before your donation.</li>
+  </ul>
+</div>
+
+<%- include('../partials/footer') %>
