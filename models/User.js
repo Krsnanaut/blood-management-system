@@ -1,3 +1,4 @@
+// models/User.js - Updated
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
 const bcrypt = require('bcryptjs');
@@ -22,12 +23,12 @@ const User = sequelize.define('User', {
     allowNull: false
   },
   role: {
-    type: DataTypes.ENUM('donor', 'recipient'),
+    type: DataTypes.ENUM('donor', 'recipient', 'admin'),
     allowNull: false
   },
   bloodType: {
     type: DataTypes.ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
-    allowNull: false
+    allowNull: true // Null for admin users
   },
   phone: {
     type: DataTypes.STRING,
